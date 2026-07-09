@@ -1,4 +1,4 @@
-# 🌲 Forest Fire Prevention System — ESP32 Mesh + AI + Node.js
+# Forest Fire Prevention System — ESP32 Mesh + AI + Node.js
 
 > Distributed IoT network for wide-area environmental monitoring and early fire detection.
 > Self-healing Mesh topology, multi-sensor nodes, Groq AI anomaly analysis,
@@ -80,36 +80,6 @@ A network of ESP32 sensor nodes forms a **self-healing Mesh** using `painlessMes
 |---|---|
 | Temperature | > 35°C |
 | Smoke (MQ-2 analog) | > 500 |
-
----
-
-## Repository Structure
-
-```
-forest-mesh-monitor/
-├── firmware/
-│   ├── Mesh_Maestro/
-│   │   └── Mesh_Maestro.ino          # Master node: receives Mesh data → Serial JSON
-│   ├── Datos_pasarlos_http/
-│   │   └── Datos_pasarlos_http.ino   # Slave node: all sensors → Mesh
-│   ├── Mesh_Esclavo/
-│   │   └── Mesh_Esclavo.ino          # Alternate slave firmware
-│   ├── IR_llama/
-│   │   └── IR_llama.ino              # Standalone flame detector with debounce
-│   ├── manejo_de_la_baliza/
-│   │   └── manejo_de_la_baliza.ino   # MQTT beacon subscriber
-│   ├── Gas_Presion_humedad/          # Individual sensor tests
-│   ├── mesh_dht_presion/
-│   ├── motor_360/
-│   ├── presion/
-│   ├── SENsor_Gas/
-│   └── Test_humedad_y_agua/
-├── server/
-│   ├── server.js                     # Node.js: Serial → AI → WebSocket → Dashboard
-│   ├── package.json
-│   └── .env.example                  # Template — never commit your real .env
-└── README.md
-```
 
 ---
 
